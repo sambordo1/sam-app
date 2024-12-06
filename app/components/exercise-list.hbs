@@ -1,0 +1,30 @@
+<div class="exercise-list">
+  <h2>{{@title}}</h2>
+  <ul>
+    {{#each @exercises as |exercise|}}
+      {{!-- template-lint-disable no-invalid-interactive --}}
+      <li {{on "click" (fn this.toggleExercise exercise.name)}}>
+        {{exercise.name}}
+        {{#if (eq this.expandedExercise exercise.name)}}
+          <div class="exercise-details">
+            {{#if exercise.videoUrl}}
+              {{!-- template-lint-disable require-iframe-title --}}
+              <iframe 
+                width="100%" 
+                height="315" 
+                src="{{exercise.videoUrl}}" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            {{/if}}
+            <h3>Description</h3>
+            <p>{{exercise.description}}</p>
+            <h3>Reps</h3>
+            <p>{{exercise.reps}}</p>
+          </div>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>

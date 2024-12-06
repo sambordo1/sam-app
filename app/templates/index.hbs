@@ -1,0 +1,30 @@
+<NavigationBar />
+<div class="home-page">
+  <RectangleBox 
+    @route="workout" 
+    @backgroundImage="/workout.png" 
+    @altText="Workout Plan Background" 
+    @text="Workout Plan" />
+
+  <RectangleBox 
+    @route="workoutA" 
+    @backgroundImage="/workout.png" 
+    @altText="Workout A Background" 
+    @text="Workout A" />
+
+  <RectangleBox 
+    @route="workoutB" 
+    @backgroundImage="/workout.png" 
+    @altText="Workout B Background" 
+    @text="Workout B" />
+
+  <RectangleBox 
+    @route="workoutC" 
+    @backgroundImage="/workout.png" 
+    @altText="Workout C Background" 
+    @text="Workout C" />
+
+</div>
+
+{{!-- ember build --environment=production
+aws s3 sync dist/ s3://sambordo.ninja/ --acl public-read --}}

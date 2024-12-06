@@ -1,1 +1,244 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+/* Set the entire page background to black */
+body {
+  background-color: black; /* Make the body background black */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden auto; /* Prevent horizontal overflow */ /* Allow vertical scrolling */
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
+/* Hide scrollbar for WebKit browsers */
+body::-webkit-scrollbar {
+  width: 0;
+  background: transparent; /* Optional: make scrollbar background transparent */
+}
+
+/* Hide scrollbar in Firefox */
+body {
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+/* Navigation Bar */
+.nav-bar {
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  padding: 15px;
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center;
+  border: 0; /* No border */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent vertical overflow */
+}
+
+.nav-bar .logo {
+  margin-right: 10px; /* Add space between the logo and the links */
+  margin-left: 10px; /* Add space to the left of the logo */
+}
+
+.nav-bar .logo a {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar .logo a img {
+  height: 50px; /* Set the logo height */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.nav-bar .nav-links-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  flex-grow: 1; /* Allow it to grow to fill available space */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.nav-bar .nav-links-container::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar for WebKit browsers */
+  background: transparent; /* Optional: make scrollbar background transparent */
+}
+
+.nav-bar .nav-links {
+  display: flex;
+  gap: 20px; /* Add space between the links */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.nav-bar .nav-links a {
+  color: white; /* White text */
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold; /* Make the navigation links bold */
+  padding: 5px 10px; /* Add some padding for hover effect */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.nav-bar .nav-links a:hover {
+  background-color: #333; /* Slightly darker background color on hover */
+}
+
+/* Home Page */
+.home-page {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  margin-top: 1px; /* Reduced space between the nav bar and the rectangles */
+  background-color: black; /* Ensure the home page background is black */
+  width: 100%; /* Ensure it covers full width */
+  min-height: calc(
+    100vh - 72px
+  ); /* Adjust to fill the screen below the navbar */
+
+  box-sizing: border-box;
+}
+
+.box {
+  width: 35%;
+  height: 300px; /* Fixed height to ensure consistency */
+  margin: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  border: 3px solid white; /* White border */
+  box-shadow: 0 4px 8px rgb(255 255 255 / 20%); /* Optional: White shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; /* Include padding/border in box dimensions */
+}
+
+.box-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.box-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the background image covers the box area without distorting */
+  opacity: 0.7;
+}
+
+.box-content span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  background-color: black; /* Solid black background for text containers */
+  color: white; /* White text */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Workout and Projects Pages */
+.workout-page,
+.projects-page {
+  display: flex;
+  flex-wrap: wrap; /* Allows the boxes to wrap to the next line if there's not enough space */
+  justify-content: space-around; /* Ensures the boxes are spaced evenly */
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: black; /* Ensure the page background is black */
+  width: 100%;
+  min-height: calc(
+    100vh - 72px
+  ); /* Adjust to fill the screen below the navbar */
+
+  box-sizing: border-box;
+}
+
+@media (width <= 768px) {
+  .home-page,
+  .workout-page,
+  .projects-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 80%; /* Adjust width for mobile */
+    margin-bottom: 20px; /* Add space between stacked boxes */
+  }
+}
+
+/* Active Link Styling */
+.nav-links a.active {
+  font-weight: bold;
+  color: #f0f0f0; /* Slightly lighter text color for active link */
+}
+
+/* Exercise List */
+.exercise-list {
+  border: 2px solid white; /* White outline */
+  padding: 20px;
+  margin: 20px auto; /* Add margin to center and space it horizontally */
+  border-radius: 10px;
+  max-width: 800px; /* Limit the width to avoid it stretching too far */
+  box-sizing: border-box; /* Ensure the padding is included in the width */
+}
+
+.exercise-list h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.exercise-list ul {
+  list-style-type: none; /* Remove the default bullet points */
+  padding-left: 0;
+  margin: 0;
+}
+
+.exercise-list li {
+  color: white;
+  margin-bottom: 5px;
+  font-size: 1.2em; /* Larger text */
+  cursor: pointer;
+  padding: 10px;
+  background-color: #333; /* Dark background for the list items */
+  border-radius: 5px;
+}
+
+.exercise-list li:hover {
+  background-color: #444; /* Slightly lighter on hover */
+}
+
+.exercise-details {
+  margin-top: 10px;
+  background-color: #222; /* Darker background for details */
+  padding: 15px;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding is included in the dimensions */
+}
+
+.exercise-details video {
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 10px;
+}
+
+.exercise-details p {
+  color: white;
+  text-indent: 20px;
+}
+
+.exercise-details h3 {
+  color: white;
+  margin-bottom: 10px;
+}

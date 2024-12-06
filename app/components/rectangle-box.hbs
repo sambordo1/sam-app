@@ -1,0 +1,17 @@
+<div class="box">
+  {{#if @externalLink}}
+    <a href={{@externalLink}} target="_blank" rel="noopener noreferrer">
+      <div class="box-content">
+        <img src={{@backgroundImage}} alt={{@altText}} class="box-background">
+        <span>{{@text}}</span>
+      </div>
+    </a>
+  {{else}}
+    <LinkTo @route={{@route}}>
+      <div class="box-content">
+        <img src={{@backgroundImage}} alt={{@altText}} class="box-background">
+        <span>{{@text}}</span>
+      </div>
+    </LinkTo>
+  {{/if}}
+</div>
