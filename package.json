@@ -22,7 +22,8 @@
     "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
     "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
-    "test:ember": "ember test"
+    "test:ember": "ember test",
+    "bdd": "cucumber-js tests/bdd/features --require tests/bdd/steps/**/*.js --require tests/bdd/support/**/*.js"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",

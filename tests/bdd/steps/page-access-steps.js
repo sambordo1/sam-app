@@ -1,17 +1,18 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-const { page } = require('../support/playwright'); 
+const { page } = require('../support/playwright');
 
 Given('I am a visitor', async () => {
   // This can be left empty for now, or used for set-up logic.
 });
 
-When('I navigate to the homepage', async () => {
-  await page.goto('http://sambordo.ninja/');
+When('I navigate to the homepage', async function () {
+  await this.page.goto('http://staging.sambordo.ninja/');
 });
 
-Then('I should see the link {string}', async (expectedLink) => {
-  const link = await page.link();
-  if (title !== expectedLink) {
-    throw new Error(`Expected title "${expectedLink}", but got "${title}"`);
+Then('I should see the title {string}', async function (expectedTitle) {
+  const title = await this.page.title();
+  if (title !== expectedTitle) {
+    throw new Error(`Expected title "${expectedTitle}", but got "${title}"`);
   }
 });
+

@@ -6,4 +6,4 @@ Feature: Visit Web Page
   Scenario: Visit the homepage
     Given I am a visitor
     When I navigate to the homepage
-    Then I should see the link "Workout Plan"
+    Then I should see the title "Sam App"
