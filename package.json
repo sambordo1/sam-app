@@ -79,5 +79,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^11.1.1"
   }
 }

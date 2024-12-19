@@ -90,17 +90,33 @@ body {
 /* Home Page */
 .home-page {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px;
-  margin-top: 1px; /* Reduced space between the nav bar and the rectangles */
+  flex-wrap: wrap;
+  justify-content: center; /* Centers boxes horizontally */
+  align-items: flex-start;
+  margin-top: 0;
+  padding-top: 0;
   background-color: black; /* Ensure the home page background is black */
   width: 100%; /* Ensure it covers full width */
-  min-height: calc(
+  /* min-height: calc(
     100vh - 72px
-  ); /* Adjust to fill the screen below the navbar */
+  ); Adjust to fill the screen below the navbar */
 
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+}
+
+.page-title {
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 1px 0; /* adjust spacing as desired */
+  background-color: black; /* Keep consistent with page background if desired */
+  padding: 10px 0; /* Some vertical padding */
+}
+
+/* If you need to ensure the title sits snugly below the navbar */
+.nav-bar ~ .page-title {
+  margin-top: 10px; /* adjust as needed */
 }
 
 .box {
