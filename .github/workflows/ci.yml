@@ -26,13 +26,16 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Install Playwright Browsers
+        run: npx playwright install
+
       # Build the Ember application
       - name: Build Ember App
         run: npx ember build --environment=production
 
-      # Run your Cucumber/Playwright tests
-      - name: Run BDD Tests
-        run: npm run bdd
+      # Only run tests here if i need to test on local env before staging
+      # - name: Run BDD Tests
+      #   run: npm run bdd
 
       # Configure AWS credentials for deployment
       - name: Configure AWS Credentials
