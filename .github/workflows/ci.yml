@@ -28,7 +28,7 @@ jobs:
 
       # Build the Ember application
       - name: Build Ember App
-        run: ember build --environment=production
+        run: npx ember build --environment=production
 
       # Run your Cucumber/Playwright tests
       - name: Run BDD Tests
